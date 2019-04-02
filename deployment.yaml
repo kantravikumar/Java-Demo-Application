@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ravikant
-        image: ravikant1/javademoapp:#BUILD-NUMBER#
+        image: ravikant1/javademoapp_#JOB-NAME#:#BUILD-NUMBER#
         ports:
         - containerPort: 8080
 ---
