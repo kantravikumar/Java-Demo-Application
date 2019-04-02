@@ -13,8 +13,8 @@ spec:
         run: rajni2-deployment
     spec:
       containers:
-      - name: rajni2-deployment
-        image: rajnikhattarrsinha/javademoapp:#BUILD-NUMBER#
+      - name: ravikant
+        image: ravikant/javademoapp:#BUILD-NUMBER#
         ports:
         - containerPort: 8080
 ---
