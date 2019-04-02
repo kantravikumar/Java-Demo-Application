@@ -1,7 +1,7 @@
 node{
       
       stage('SCM Checkout'){
-         git 'https://github.com/ravikant1/Java-Demo-Application'
+         git 'https://github.com/kantravikumar/Java-Demo-Application'
       }
       
       stage('Build'){
@@ -16,12 +16,12 @@ node{
       }
       
       stage('Build Docker Image'){
-         sh 'docker build -t ravikant/javademoapp_$JOB_NAME:$BUILD_NUMBER .'
+         sh 'docker build -t ravikant1/javademoapp_$JOB_NAME:$BUILD_NUMBER .'
       }  
    
       stage('Publish Docker Image'){
          withCredentials([string(credentialsId: 'dockerpwdravikant', variable: 'dockerPWDravikant')]) {
-              sh "docker login -u raviaknt1 -p ${dockerPWDravikant}"
+              sh "docker login -u ravikant1 -p ${dockerPWDravikant}"
          }
         sh 'docker push ravikant1/javademoapp_$JOB_NAME:$BUILD_NUMBER'
         sh "sed -i.bak 's/#BUILD-NUMBER#/$BUILD_NUMBER/' deployment.yaml"
